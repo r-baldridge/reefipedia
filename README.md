@@ -1,10 +1,32 @@
-# reefipedia
-Reefipedia: a Decentralized, Community Verifed, Semantic Knowledge Store for AI Agents
+# Reefipedia
 
-Agents need a reliable knowledge storehouse to minimize guesswork, token waste, and vulnerability while maximizing usefulness. Lets build a reef in the ocean of data flowing around the globe (:
+**A Decentralized, Community-Verified, Semantic Knowledge Store for AI Agents**
 
-The Chitin Protocol: Architectural Foundations for Reefipedia, a Decentralized, Community Verified, Semantic Knowledge Store for AI Agents
-1. Executive Summary
+Agents need a reliable knowledge storehouse to minimize guesswork, token waste, and vulnerability while maximizing usefulness. Let's build a reef in the ocean of data flowing around the globe.
+
+---
+
+## Project Status
+
+This repository contains the **protocol specification and architectural design** for Reefipedia (The Chitin Protocol).
+
+The **Phase 1 Local MVP implementation** is under active development in a private repository ([chitin-core](https://github.com/r-baldridge/chitin-core)). The implementation includes:
+
+- **12 Rust crates** forming the Chitin workspace (core types, storage, verification, economics, P2P stubs, consensus, reputation, drift detection, sync, gRPC server, daemon, CLI)
+- **Protocol Buffer definitions** for all RPC interfaces
+- **Python SDK** with LangChain integration
+- **Docker Compose** stack (Qdrant + IPFS + chitin-daemon)
+- **ZK circuit scaffolding** for Proof of Semantic Integrity (SP1)
+
+See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full technical specification that the implementation follows.
+
+---
+
+## The Chitin Protocol
+
+### Architectural Foundations for Reefipedia, a Decentralized, Community Verified, Semantic Knowledge Store for AI Agents
+
+### 1. Executive Summary
 The rapid and accelerating proliferation of Autonomous AI Agents has precipitated an urgent, unaddressed demand for a shared, persistent, and verifiable memory layer. Large Language Models (LLMs), while possessing vast repositories of static pre-trained knowledge, suffer from a fundamental limitation: they lack a dynamic, decentralized mechanism to store, retrieve, and verify new information without reliance on centralized intermediaries or ephemeral, limited-context windows. This report articulates the comprehensive architectural specification for Reefipedia (The Chitin Protocol), a proposed open-source protocol designed to function as a decentralized, immutable, and semantic knowledge store optimized explicitly for machine consumption.
 The core atomic unit of this protocol is the "Polyp"—a Verified Vector Embedding that encapsulates semantic data, cryptographic proofs of origin, and deep lineage metadata. Unlike traditional knowledge graphs that rely on rigid, pre-defined ontologies, Reefipedia utilizes a high-dimensional vector space to map relationships, enabling the "fuzzy" semantic retrieval critical for LLM reasoning and inference. The architecture leverages a hybrid storage model combining Content-Addressable Storage (IPFS) for fundamental immutability with a distributed, high-performance Approximate Nearest Neighbor (ANN) index for rapid discoverability.
 This analysis rigorously identifies critical gaps in existing Distributed Ledger Technologies (DLT) regarding vector storage—specifically the lack of consensus on semantic correctness—and proposes a novel consensus mechanism, Proof of Semantic Integrity. This mechanism utilizes Zero-Knowledge Virtual Machines (zkVMs) to cryptographically verify the generation of embeddings, ensuring that the "memory" retrieved by an agent is mathematically proven to derive from the claimed source text. Synthesizing cutting-edge research on Multi-Agent Systems (MAS), Byzantine Fault Tolerance (BFT) in vector spaces, and semantic drift, this report outlines a realistic, phased roadmap from a local developer MVP to a fully incentivized, federated public network, aiming to provide the "Long-Term Memory" for the emerging agentic economy.
